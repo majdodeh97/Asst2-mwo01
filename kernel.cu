@@ -46,8 +46,8 @@ void mm_gpu(float* A, float* B, float* C, unsigned int M, unsigned int N, unsign
 
     // TODO
 
-	cudaMemcpy(A_d, a, sizeof(float) * M * K, cudaMemcpyHostToDevice);
-	cudaMemcpy(B_d, b, sizeof(double) * K *N, cudaMemcpyHostToDevice);
+	cudaMemcpy(A_d, A, sizeof(float) * M * K, cudaMemcpyHostToDevice);
+	cudaMemcpy(B_d, B, sizeof(float) * K *N, cudaMemcpyHostToDevice);
 
 
 
@@ -77,7 +77,7 @@ void mm_gpu(float* A, float* B, float* C, unsigned int M, unsigned int N, unsign
     // TODO
 
 
-
+	cudaMemcpy(C, C_d, sizeof(float) * M * N, cudaMemcpyDeviceToHost);
 
 
 
